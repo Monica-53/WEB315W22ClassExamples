@@ -11,7 +11,7 @@ namespace ClassExampleRazorPages.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        public string Username;
+        public string Username { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
