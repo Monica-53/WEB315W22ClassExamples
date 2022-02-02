@@ -2,36 +2,67 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
-    var Username = "TheUserNameOnTHePage";
-    <p>Username the first time: @Username</p>
 
-    string[] people = { "Alex", "Peter", "Phil" };
+    var value = 0;
+    string[] fruits = { "Apple", "Banana", "Kiwi" };
 }
 
-<div>
-    3 &lt; 5
-    &amp;
-</div>
-
-@{
-    Username = "ADifferentUsername";
+@if (value % 2 == 0) //
+{
+    <p>The value is even</p>
 }
-<div class="text-center">
-    <h1 class="display-4">Hello there!</h1>
-    <p>The current time is @DateTime.Now</p>
-    <p>amillerman01@@stclaircollege.ca</p>
-    <p>@Username</p>
-    <p>@Model.Username</p>
-    <p>@DateTime.IsLeapYear(2020)</p>
-    <p>This time last week: @(DateTime.Now - TimeSpan.FromDays(7))</p>
-    <p>@("<span>A string in c#</span>")</p>
+else if (value > 10)
+{
+    <p>The value is over 10 and odd</p>
+}
+else
+{
+    <p> The number is odd and less than 10</p>
+}
+
+@switch (value)
+{
+    case 1:
+        <p>The value is 1!</p>
+        break;
+    case 10:
+        <p>Value is 10</p>
+        break;
+    default:
+        <p>It's not 1</p>
+        break;
+}
+
+@foreach (var fruit in fruits)
+{
+    <p>@fruit is a delicious fruit</p>
+}
 
 
+@using (Html.BeginForm())
+{
     <div>
-        @for (var i = 0; i < people.Length; i++)
-        {
-            var person = people[i];
-            <text>Name: @person</text>
-        }
+        Email: <input type="email" id="email">
+        <button>Register</button>
     </div>
-</div>
+}
+
+@try
+{
+    @* if (value == 0)
+        {
+        throw new InvalidOperationException("You did something invalid");
+        } *@
+    <p>dividing 100 by @value results in @(100 / value)</p>
+    <p>This is displayed after the division</p>
+}
+catch (Exception e)
+{
+    <p>You cannot divide by 0!</p>
+}
+finally
+{
+    <p>Have a nice day</p>
+}
+
+<!-- <div>Some div out in the world</div> -->
