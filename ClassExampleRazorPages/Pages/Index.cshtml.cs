@@ -21,6 +21,7 @@ namespace ClassExampleRazorPages.Pages
         public void OnGet()
         {
             Username = "Amillerman01";
+            string something = "a value";
 
         }
     }
