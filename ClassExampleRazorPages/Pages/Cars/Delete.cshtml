@@ -1,4 +1,4 @@
-@page
+@page "{id:int?}"
 @model ClassExampleRazorPages.Pages_Cars.DeleteModel
 
 @{
@@ -43,7 +43,7 @@
             @Html.DisplayFor(model => model.Car.Price)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="Car.ID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
