@@ -39,7 +39,7 @@ namespace ClassExampleRazorPages.Pages_Cars
             if (!string.IsNullOrEmpty(SearchString))
             {
                 // where clause from sql, where c.CarModel = SearchString
-                cars = cars.Where(c => c.CarModel.Contains(SearchString));
+                cars = cars.Where(c => c.CarModel.ToLower().Contains(SearchString.ToLower()));
             }
 
             if (!string.IsNullOrEmpty(CarMake))
