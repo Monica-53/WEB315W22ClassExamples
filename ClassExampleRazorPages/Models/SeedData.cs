@@ -25,33 +25,37 @@ namespace ClassExampleRazorPages.Models
                     {
                         CarMake = "Ford",
                         CarModel = "Focus",
-                        CarYearReleased =  DateTime.Parse("2001-1-1"),
+                        CarYearReleased = DateTime.Parse("2001-1-1"),
                         Color = "Blue",
-                        Price = 1
+                        Price = 1,
+                        OwnerName = "Alex"
                     },
                     new Car
                     {
                         CarMake = "Ford",
                         CarModel = "Mustang",
-                        CarYearReleased =  DateTime.Parse("1964-1-1"),
+                        CarYearReleased = DateTime.Parse("1964-1-1"),
                         Color = "Black",
-                        Price = 50000
+                        Price = 50000,
+                        OwnerName = "Saqib"
                     },
                     new Car
                     {
                         CarMake = "Jaguar",
                         CarModel = "Range Rover",
-                        CarYearReleased =  DateTime.Parse("2010-1-1"),
+                        CarYearReleased = DateTime.Parse("2010-1-1"),
                         Color = "White",
-                        Price = 40000
+                        Price = 40000,
+                        OwnerName = "Dana"
                     },
                     new Car
                     {
                         CarMake = "Jeep",
                         CarModel = "Wrangler",
-                        CarYearReleased =  DateTime.Parse("2022-01-01"),
+                        CarYearReleased = DateTime.Parse("2022-01-01"),
                         Color = "Yellow",
-                        Price = 80000
+                        Price = 80000,
+                        OwnerName = "Michael"
                     }
                 );
                 context.SaveChanges();
