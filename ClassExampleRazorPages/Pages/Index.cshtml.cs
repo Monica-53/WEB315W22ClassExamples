@@ -12,6 +12,8 @@ namespace ClassExampleRazorPages.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         public string Username { get; set; }
+        public String UsernameObject { get; set; }
+        public char SingleCharacter { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -21,6 +23,7 @@ namespace ClassExampleRazorPages.Pages
         public void OnGet()
         {
             Username = "Amillerman01";
+            SingleCharacter = 'A';
 
         }
     }
