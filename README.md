@@ -4,4 +4,4 @@
 * Of items in my 
 * Readme file
 
-## This won't be on the main branch
+Finally merged in the code from week 08 into main
