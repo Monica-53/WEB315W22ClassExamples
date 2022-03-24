@@ -1,0 +1,49 @@
+﻿@page "/todo"
+
+<h3>Todo (@todoList.Count(singleTodoItem => !singleTodoItem.IsDone))</h3>
+
+<input placeholder="Something todo" @bind="newTodoTitle" />
+<button @onclick="AddTodo">Add todo</button>
+
+<ul>
+    @foreach (var todo in todoList)
+    {
+        @if (!todo.IsDone) // only show the item if we haven't finished it
+        {
+            <li>
+                <input type="checkbox" @bind="todo.IsDone" />
+                <input @bind="todo.Title" />
+            </li>
+        }
+    }
+</ul>
+
+@code {
+    private List<TodoItem> todoList = new();
+    private string newTodoTitle;
+
+    private void AddTodo()
+    {
+        TodoItem newItem; // if we end up making a new item, we want to store it here
+
+        if (!string.IsNullOrWhiteSpace(newTodoTitle)) // does the new todo title contain a value?
+        {
+            // if it does, we add it to the list
+            newItem = new TodoItem
+            {
+                Title = newTodoTitle
+                @* IsDone = true *@
+            };
+            todoList.Add(newItem);
+            newTodoTitle = ""; // string.Empty;
+        }
+        // Todo: Add the todo
+    }
+
+
+    // this is a long version of the lamda method inside of the todoList.Count
+    private bool TodoIsDone(TodoItem singleTodoItem)
+    {
+        return !singleTodoItem.IsDone;
+    }
+}
